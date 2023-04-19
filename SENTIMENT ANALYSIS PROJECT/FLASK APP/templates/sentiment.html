@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Deployment</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      
+  </head>
+  <header>
+    <div class="container">
+        <nav>
+            <ul class="nav-list">
+
+              <li class="nav-item">
+                  <a href="{{ url_for('homemenu')}}" class="nav-link">Home</a>
+              </li>
+
+              <li class="nav-item">
+                  <a href="{{ url_for('sentimentmenu')}}" value="log_user" class="nav-link">Sentiments</a>
+              </li>
+              
+            <li class="nav-item">
+              <a href="{{ url_for('tweetsmenu')}}" value="log_user" class="nav-link">Tweets</a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url_for('analysismenu')}}" value="log_user" class="nav-link">Analysis</a>
+        </li>
+            <li class="nav-item">
+              <a href="{{ url_for('logoutmenu')}}" value="log_user" class="nav-link">Logout</a>
+          </li>
+            
+            </ul>
+                  
+        </nav>
+    </div>
+  </header>
+
+  <body style="background: #222;">
+    <div class="login">
+      <h1>CUSTOMER FEEDBACKS</h1>
+      
+
+        <!-- Main Input For Receiving Query to our ML -->
+        <div class="sentiment">
+          <h2>Sentiment Analysis</h2>
+          <form action="{{ url_for('predict')}}"method="post">
+              <input type="text" name="Enter THE FIERS HOTEL Review Here" placeholder="Enter The Fiers Hotel Review Here" required="required" />
+              <button type="submit" class="btn">Predict Sentiment</button>
+          </form>
+
+        <br>
+        <br>
+        {{ prediction_text }}
+      </div>
+    </div>
+  </body>
+</html>

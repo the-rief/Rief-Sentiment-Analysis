@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Deployment</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" 
+      integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" 
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+      
+  </head>
+
+  <header>
+    <div class="container">
+        <nav>
+            <ul class="nav-list">
+
+              <li class="nav-item">
+                  <a href="{{ url_for('homemenu')}}" class="nav-link">Home</a>
+              </li>
+
+              <li class="nav-item">
+                  <a href="{{ url_for('sentimentmenu')}}" value="log_user" class="nav-link">Sentiments</a>
+              </li>
+              
+            <li class="nav-item">
+              <a href="{{ url_for('tweetsmenu')}}" value="log_user" class="nav-link">Tweets</a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url_for('analysismenu')}}" value="log_user" class="nav-link">Analysis</a>
+        </li>
+            <li class="nav-item">
+              <a href="{{ url_for('logoutmenu')}}" value="log_user" class="nav-link">Logout</a>
+          </li>
+            
+            </ul>
+                  
+        </nav>
+    </div>
+  </header>
+  <body style="background: #222;">
+
+    
+        <div class="container" >
+          <h1>CUSTOMER FEEDBACK SENTIMENT ANALYSIS</h1>
+            <h2 style="color:white; text-align:center">TWITTER DATASET ANALYTICS</h2>
+              
+            <h4>Positive Word Cloud</h4>
+            {{ wordcloud_text }}
+            <h4>Negative Word Cloud</h4>
+            {{ wordcloud2_text }}
+        </div>
+    
+    </section>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Deployment</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      
+  </head>    
+  <header>
+    <div class="container">
+        <nav>
+            <ul class="nav-list">
+
+              <li class="nav-item">
+                  <a href="{{ url_for('homemenu')}}" class="nav-link">Home</a>
+              </li>
+
+              <li class="nav-item">
+                  <a href="{{ url_for('sentimentmenu')}}" value="log_user" class="nav-link">Sentiments</a>
+              </li>
+              
+            <li class="nav-item">
+              <a href="{{ url_for('tweetsmenu')}}" value="log_user" class="nav-link">Tweets</a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url_for('analysismenu')}}" value="log_user" class="nav-link">Analysis</a>
+        </li>
+            <li class="nav-item">
+              <a href="{{ url_for('logoutmenu')}}" value="log_user" class="nav-link">Logout</a>
+          </li>
+            
+            </ul>
+                  
+        </nav>
+    </div>
+  </header>
+  <body style="background: #222;">
+    <section class="logging">
+        <div class="log-inbox">
+            <h1>SIGN IN</h1>
+            <form action="{{ url_for('register')}}"method="post">
+                <div class="text-b">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" name="username" required>
+                </div>
+                <div class="text-b">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" name="password" required>
+                </div>
+                <div class="text-b">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Confirm Password" name="confirmpassword" required>
+                </div>
+          
+                <a href="index.html"><button type="submit" class="btn"> SIGN IN</button></a>
+            </form>
+            
+        </div>
+    
+    
+    </section>
+  </body>
+</html>

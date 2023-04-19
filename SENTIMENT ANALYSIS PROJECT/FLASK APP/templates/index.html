@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Deployment</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      
+  </head>
+  <header>
+    <div class="container">
+        <nav>
+            <ul class="nav-list">
+              
+            </ul>
+                  
+        </nav>
+    </div>
+  </header>
+
+  <body style="background: #222;">
+    <div class="container" >
+      <h1>SENTIMENT ANALYSIS</h1><br><br>
+    </div>
+    <section class="logging">
+
+        <div class="log-inbox">
+          <br>
+          <h2>LOG IN</h2>
+          <form action="{{ url_for('login')}}" method="post">
+              <div class="text-b">
+                  <i class="fas fa-user"></i>
+                  <input type="text" placeholder="Username" name="username" reguired>
+              </div>
+              <div class="text-b">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" placeholder="Password" name="password" required>
+              </div>
+              <div class="learn-div"><button type="submit" name="submit" class="btn"> LOGIN</button></div>
+              
+              </div>
+          </form>
+        </div>
+  </section>
+  </body>
+</html>
